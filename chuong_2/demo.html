@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    //1 sử dụng DOM đẻ tạo thẻ h1 vào ưeb
+    const h1DOM = document.createElement('h1');
+    h1DOM.title='Welcom React';
+    h1DOM.className = 'h1-class';
+    h1DOM.innerText = 'Thẻ h1 tạo với DOM';
+    document.body.appendChild(h1DOM);
+
+    // 2 sử dụng react để tạo thẻ h1 và render ra giao diện 
+    //2.1 tạo đối tượng 
+    const h1React = React.createElement(
+        'h1',
+        {
+            title:'Welcom react',
+            className:'h1-class'
+
+        },
+        'Thẻ h1 tao ra với react'
+    );
+    //2.2 render đối tuojng ra giao dien (REACT 17)
+    // + xác định đối tượng chứa thành phần muốn render
+
+    const root = document.querySelector('.root');
+    ReactDOM.render(h1React,root); 
+
+    //2.3 render đối tượng ra giao diện (REACT 18)
+    // + xác định đối tượng chứa thành phần muốn render
+    const container = document.querySelector('.root');
+    const root =ReactDOM.createRoot(container);
+    root.render(h1React);
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
